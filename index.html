@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore Arizona land listings and share the details of land you would like to sell with ArizonaPrimeLand.com."
+    />
+    <title>Arizona Prime Land | Find Your Land in Arizona</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/site.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/home.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Arizona Prime Land home">
+          <img
+            src="assets/logo/arizona-prime-land-source-logo.png"
+            alt=""
+            class="brand__logo"
+          />
+          <span class="brand__wordmark"
+            ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+            ><b>.COM</b></span
+          >
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          data-menu-toggle
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="menu-toggle__bars" aria-hidden="true"></span
+          ><span class="sr-only">Toggle navigation</span>
+        </button>
+        <nav
+          id="primary-navigation"
+          class="primary-navigation"
+          aria-label="Primary navigation"
+        >
+          <a data-nav-link href="index.html" aria-current="page">Home</a>
+          <a data-nav-link href="sell-your-land.html">Sell Your Land</a>
+          <a data-nav-link href="prime-properties.html">Prime Properties</a>
+          <a data-login-link data-nav-link href="login-register.html"
+            >Login / Register</a
+          >
+          <a data-account-link data-nav-link href="login-register.html" hidden
+            >My Account</a
+          >
+          <button class="nav-logout" data-logout-button type="button" hidden>
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <section class="home-hero">
+        <div class="home-hero__image" aria-hidden="true"></div>
+        <div class="container home-hero__content">
+          <p class="eyebrow eyebrow--light">Arizona Prime Land</p>
+          <h1>Find Your Perfect Land <span>in Arizona</span></h1>
+          <p class="home-hero__intro">
+            Explore land opportunities across Arizona and find a property that
+            fits your plans.
+          </p>
+        </div>
+        <div
+          class="container search-card-wrap"
+          aria-labelledby="home-search-heading"
+        >
+          <form id="home-property-search" class="search-card">
+            <div class="search-card__heading">
+              <div>
+                <p class="eyebrow">Explore properties</p>
+                <h2 id="home-search-heading">Find Your Properties</h2>
+                <p class="muted">
+                  Search by location, property type, price, acreage and more.
+                </p>
+              </div>
+            </div>
+            <div class="search-fields search-fields--home">
+              <div class="field">
+                <label for="home-property-query"
+                  >Property Name / MLS Number</label
+                ><input
+                  id="home-property-query"
+                  name="query"
+                  type="search"
+                  placeholder="Search title or MLS number"
+                />
+              </div>
+              <div class="field">
+                <label for="home-property-type">Property Type</label
+                ><select id="home-property-type" name="type">
+                  <option value="">Any type</option>
+                  <option value="Residential Land">Residential Land</option>
+                  <option value="Commercial Land">Commercial Land</option>
+                  <option value="Industrial Land">Industrial Land</option>
+                  <option value="Solar Land">Solar Land</option>
+                  <option value="Farm Land">Farm Land</option>
+                  <option value="Other Land">Other Land (type not specified)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="home-price-min">Minimum Price ($)</label
+                ><input
+                  id="home-price-min"
+                  name="priceMin"
+                  type="number"
+                  min="0"
+                  step="any"
+                  placeholder="e.g. 50000"
+                />
+              </div>
+              <div class="field">
+                <label for="home-price-max">Maximum Price ($)</label
+                ><input
+                  id="home-price-max"
+                  name="priceMax"
+                  type="number"
+                  min="0"
+                  step="any"
+                  placeholder="e.g. 100000"
+                />
+              </div>
+              <div class="field">
+                <label for="home-acres-min">Minimum Acres</label
+                ><input
+                  id="home-acres-min"
+                  name="acresMin"
+                  type="number"
+                  min="0"
+                  step="any"
+                  placeholder="e.g. 1"
+                />
+              </div>
+              <div class="field">
+                <label for="home-acres-max">Maximum Acres</label
+                ><input
+                  id="home-acres-max"
+                  name="acresMax"
+                  type="number"
+                  min="0"
+                  step="any"
+                  placeholder="e.g. 10"
+                />
+              </div>
+              <div class="field">
+                <label for="home-feature">Unique Features</label
+                ><select id="home-feature" name="feature">
+                  <option value="">Any feature</option>
+                  <option value="mountain-views">Mountain views</option>
+                  <option value="surrounded-by-homes">
+                    Surrounded by homes
+                  </option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="home-state">State</label
+                ><select id="home-state" name="state">
+                  <option value="Arizona" selected>Arizona</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="home-city">City</label
+                ><select id="home-city" name="city">
+                  <option value="">Any city</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="home-zipcode">ZIP Code</label
+                ><input
+                  id="home-zipcode"
+                  name="zip"
+                  inputmode="numeric"
+                  pattern="[0-9]{5}"
+                  maxlength="5"
+                  placeholder="5-digit ZIP"
+                />
+              </div>
+              <button
+                class="button button--primary search-fields__submit"
+                id="home-search-submit"
+                type="submit"
+              >
+                <span aria-hidden="true">⌕</span> Search Properties
+              </button>
+            </div>
+            <p
+              id="home-search-status"
+              class="form-error"
+              role="alert"
+              hidden
+            ></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="deals-heading">
+        <div class="section-heading section-heading--row">
+          <div>
+            <p class="eyebrow">Catalog highlights</p>
+            <h2 id="deals-heading">Deals Properties</h2>
+            <p class="muted">
+              Browse value-focused properties from the current Prime Properties
+              catalog.
+            </p>
+          </div>
+          <a class="button button--outline" href="prime-properties.html"
+            >View All Properties <span aria-hidden="true">→</span></a
+          >
+        </div>
+        <div class="property-carousel" aria-label="Deals Properties carousel">
+          <div
+            id="home-featured-listing"
+            class="property-carousel__track"
+            aria-live="polite"
+          ></div>
+          <div class="property-carousel__controls">
+            <button
+              id="deals-carousel-previous"
+              class="property-carousel__button"
+              type="button"
+              aria-label="Show previous deals"
+            >
+              ←</button
+            ><button
+              id="deals-carousel-next"
+              class="property-carousel__button"
+              type="button"
+              aria-label="Show next deals"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--blue-soft"
+        aria-labelledby="cities-heading"
+      >
+        <div class="container">
+          <div class="section-heading section-heading--row">
+            <div>
+              <p class="eyebrow eyebrow--blue">Explore Arizona</p>
+              <h2 id="cities-heading">Available Cities</h2>
+              <p class="muted">
+                Choose a location with properties currently in the catalog.
+              </p>
+            </div>
+            <a
+              class="button button--outline button--blue"
+              href="prime-properties.html"
+              >Browse Properties <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <div
+            class="city-carousel"
+            aria-label="Cities with properties in the catalog"
+          >
+            <div id="home-city-grid" class="city-grid" aria-live="polite"></div>
+            <div class="city-carousel__controls">
+              <button
+                id="city-carousel-previous"
+                class="city-carousel__button"
+                type="button"
+                aria-label="Show previous cities"
+              >
+                ←</button
+              ><button
+                id="city-carousel-next"
+                class="city-carousel__button"
+                type="button"
+                aria-label="Show next cities"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process-section" aria-labelledby="how-heading">
+        <div class="container">
+          <div class="section-heading process-section__heading">
+            <p class="eyebrow">A simple process</p>
+            <h2 id="how-heading">How to Buy Land</h2>
+            <p class="muted">
+              Four clear steps take you from first search to an informed next
+              move.
+            </p>
+          </div>
+          <div
+            class="steps-grid steps-grid--four process-flow"
+            aria-label="Four step land buying process"
+          >
+            <article
+              class="step-card"
+              role="button"
+              tabindex="0"
+              aria-pressed="false"
+            >
+              <span class="step-card__number">01</span
+              ><span class="step-card__icon" aria-hidden="true">⌕</span
+              ><span class="step-card__kicker">Start here</span>
+              <h3>Search</h3>
+              <p>
+                Use the search tools to narrow available properties by location,
+                price, acreage, and type.
+              </p>
+              <span class="step-card__hint"
+                >Find your shortlist <span aria-hidden="true">→</span></span
+              >
+            </article>
+            <article
+              class="step-card"
+              role="button"
+              tabindex="0"
+              aria-pressed="false"
+            >
+              <span class="step-card__number">02</span
+              ><span
+                class="step-card__icon step-card__icon--blue"
+                aria-hidden="true"
+                >▤</span
+              ><span class="step-card__kicker">Compare options</span>
+              <h3>Explore</h3>
+              <p>
+                Review each listing’s details, images, parcel information, and
+                any available documents.
+              </p>
+              <span class="step-card__hint"
+                >Review the details <span aria-hidden="true">→</span></span
+              >
+            </article>
+            <article
+              class="step-card"
+              role="button"
+              tabindex="0"
+              aria-pressed="false"
+            >
+              <span class="step-card__number">03</span
+              ><span class="step-card__icon" aria-hidden="true">✉</span
+              ><span class="step-card__kicker">Ask questions</span>
+              <h3>Contact</h3>
+              <p>
+                Reach out to the listing contact to clarify availability,
+                access, utilities, and terms.
+              </p>
+              <span class="step-card__hint"
+                >Start a conversation <span aria-hidden="true">→</span></span
+              >
+            </article>
+            <article
+              class="step-card"
+              role="button"
+              tabindex="0"
+              aria-pressed="false"
+            >
+              <span class="step-card__number">04</span
+              ><span
+                class="step-card__icon step-card__icon--green"
+                aria-hidden="true"
+                >✓</span
+              ><span class="step-card__kicker">Make an informed move</span>
+              <h3>Move Forward</h3>
+              <p>
+                Independently verify title, parcel boundaries, zoning, access,
+                and transaction terms.
+              </p>
+              <span class="step-card__hint"
+                >Proceed with confidence <span aria-hidden="true">→</span></span
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-section" aria-labelledby="about-heading">
+        <div class="container about-section__layout">
+          <div class="about-section__intro">
+            <p class="eyebrow">About Arizona Prime Land</p>
+            <h2 id="about-heading">A clearer way to explore Arizona land.</h2>
+            <p>
+              ArizonaPrimeLand.com brings land listings from across Arizona into
+              one place. Browse by city, compare asking price and acreage, and
+              open property details when a listing fits what you are looking
+              for.
+            </p>
+            <p>
+              We want your search to feel straightforward from the first look to
+              the next conversation. Use each listing as a starting point,
+              contact the listed representative with questions, and confirm
+              important property details before making a decision.
+            </p>
+            <a class="button button--primary" href="prime-properties.html"
+              >Explore Properties <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <div class="about-section__points" aria-label="What we focus on">
+            <article class="about-point">
+              <span class="about-point__number">01</span>
+              <div>
+                <h3>Explore your way</h3>
+                <p>
+                  Use city links and property filters to focus on places,
+                  acreage, and prices that match your search. We’ve stripped
+                  away the noise of traditional real estate searching to put
+                  total control back in your hands. Whether you are looking for
+                  a compact suburban lot near a growing metro area or a
+                  sprawling off-grid acreage in the heart of the desert, our
+                  localized city shortcuts and dynamic filtering tools let you
+                  curate a personalized catalog in seconds.
+                </p>
+              </div>
+            </article>
+            <article class="about-point">
+              <span class="about-point__number">02</span>
+              <div>
+                <h3>Compare the essentials</h3>
+                <p>
+                  Scan the available listing information, then open a property
+                  to review its details and contact options. Each card gives you
+                  a quick snapshot of the land's vital stats. When a plot
+                  catches your eye, simply click through to access comprehensive
+                  zoning data, utility availability, high-resolution imagery,
+                  and direct channels to connect with our land specialists.
+                </p>
+              </div>
+            </article>
+            <article class="about-point">
+              <span class="about-point__number">03</span>
+              <div>
+                <h3>Know what to confirm</h3>
+                <p>
+                  Ask about availability, parcel boundaries, access, zoning,
+                  utilities, and terms with the appropriate source. Doing your
+                  homework is the most critical step in buying land. When you
+                  connect with the listed agent or owner, ensure you clarify if
+                  the property is still actively on the market and verify the
+                  exact physical boundaries via recent survey maps. Don't forget
+                  to confirm legal and physical road access, check county zoning
+                  codes for your intended use, ask about the proximity of water,
+                  power, or septic options, and discuss whether owner financing
+                  or flexible purchase terms are available.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--blue-soft reviews-section"
+        aria-labelledby="reviews-heading"
+      >
+        <div class="container">
+          <div
+            class="section-heading section-heading--row reviews-section__heading"
+          >
+            <div>
+              <p class="eyebrow eyebrow--blue">Sample stories</p>
+              <h2 id="reviews-heading">What Land Buyers Look For</h2>
+              <p class="muted">
+                This shows how customer stories can read
+                once genuine, approved reviews are available.
+              </p>
+            </div>
+          </div>
+          <div class="review-carousel" aria-label="Sample review carousel">
+            <div
+              id="home-review-carousel"
+              class="review-carousel__track"
+              aria-live="polite"
+            ></div>
+            <div class="review-carousel__controls">
+              <button
+                id="reviews-carousel-previous"
+                class="review-carousel__button"
+                type="button"
+                aria-label="Show previous sample review"
+              >
+                ←</button
+              ><button
+                id="reviews-carousel-next"
+                class="review-carousel__button"
+                type="button"
+                aria-label="Show next sample review"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-banner">
+        <div class="cta-banner__image" aria-hidden="true"></div>
+        <div class="container cta-banner__content">
+          <p class="eyebrow eyebrow--light">Your next step</p>
+          <h2>Ready to Talk About Arizona Land?</h2>
+          <p>
+            Explore the documented property or share details about land you
+            would like to sell.
+          </p>
+          <div class="button-row">
+            <a class="button button--primary" href="prime-properties.html"
+              >Browse Properties</a
+            ><a class="button button--light" href="sell-your-land.html"
+              >Sell Your Land</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html"
+            ><img
+              src="assets/logo/arizona-prime-land-source-logo.png"
+              alt=""
+              class="brand__logo"
+            /><span class="brand__wordmark"
+              ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+              ><b>.COM</b></span
+            ></a
+          >
+          <p>
+            Arizona land listings and seller inquiries, presented with clear
+            property information.
+          </p>
+        </div>
+        <div>
+          <h2 class="footer-heading">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sell-your-land.html">Sell Your Land</a></li>
+            <li><a href="prime-properties.html">Prime Properties</a></li>
+            <li><a href="login-register.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Property Types</h2>
+          <ul class="footer-links">
+            <li>
+              <a href="prime-properties.html?type=Residential%20Land"
+                >Residential Land</a
+              >
+            </li>
+            <li>
+              <a href="prime-properties.html?type=Commercial%20Land"
+                >Commercial Land</a
+              >
+            </li>
+            <li><a href="prime-properties.html?type=Industrial%20Land">Industrial Land</a></li>
+            <li><a href="prime-properties.html?type=Farm%20Land">Farm Land</a></li>
+            <li><a href="prime-properties.html?type=Solar%20Land">Solar Land</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Contact Us</h2>
+          <p class="footer-contact">Arizona Prime Land</p>
+          <a
+            data-company-gmail
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=joe%40arizonaprimeland.com"
+            >joe@arizonaprimeland.com</a
+          ><a
+            class="footer-fallback"
+            data-company-mailto
+            href="mailto:joe@arizonaprimeland.com"
+            >Open with an email app</a
+          >
+          <p class="footer-legal">
+            Terms and Privacy details should be added after owner approval.
+          </p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span
+          >© <span data-current-year></span> ArizonaPrimeLand.com. All rights
+          reserved.</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>

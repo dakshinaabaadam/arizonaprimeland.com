@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Search documented Arizona land listings using property type, price, acreage, location, and feature filters."
+    />
+    <title>Prime Properties | ArizonaPrimeLand.com</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/site.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/properties.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Arizona Prime Land home"
+          ><img
+            src="assets/logo/arizona-prime-land-source-logo.png"
+            alt=""
+            class="brand__logo"
+          /><span class="brand__wordmark"
+            ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+            ><b>.COM</b></span
+          ></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          data-menu-toggle
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="menu-toggle__bars" aria-hidden="true"></span
+          ><span class="sr-only">Toggle navigation</span>
+        </button>
+        <nav
+          id="primary-navigation"
+          class="primary-navigation"
+          aria-label="Primary navigation"
+        >
+          <a data-nav-link href="index.html">Home</a
+          ><a data-nav-link href="sell-your-land.html">Sell Your Land</a
+          ><a data-nav-link href="prime-properties.html" aria-current="page"
+            >Prime Properties</a
+          ><a data-login-link data-nav-link href="login-register.html"
+            >Login / Register</a
+          ><a data-account-link data-nav-link href="login-register.html" hidden
+            >My Account</a
+          ><button class="nav-logout" data-logout-button type="button" hidden>
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <section class="page-hero page-hero--properties">
+        <div class="page-hero__image" aria-hidden="true"></div>
+        <div class="container page-hero__content">
+          <nav class="breadcrumbs breadcrumbs--light" aria-label="Breadcrumb">
+            <a href="index.html">Home</a><span aria-hidden="true">/</span
+            ><span aria-current="page">Prime Properties</span>
+          </nav>
+          <p class="eyebrow eyebrow--light">Arizona land inventory</p>
+          <h1>Prime Properties</h1>
+          <p>
+            Search the available listing and review its details before
+            contacting the listed agent.
+          </p>
+        </div>
+      </section>
+      <section
+        class="section container listings-layout"
+        aria-label="Property search and results"
+      >
+        <button
+          id="filter-toggle"
+          class="button button--outline filter-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="filter-panel"
+        >
+          Filter Properties <span aria-hidden="true">⌄</span>
+        </button>
+        <aside
+          class="filter-panel"
+          id="filter-panel"
+          aria-labelledby="filter-heading"
+        >
+          <div class="filter-panel__heading">
+            <div>
+              <p class="eyebrow">Narrow your search</p>
+              <h2 id="filter-heading">Find Your Properties</h2>
+            </div>
+            <span aria-hidden="true" class="filter-panel__icon">⌕</span>
+          </div>
+          <form id="property-filters">
+            <div class="field">
+              <label for="filter-query">Property Name / MLS Number</label
+              ><input
+                id="filter-query"
+                name="query"
+                type="search"
+                placeholder="Name, address or MLS"
+              />
+            </div>
+            <div class="field">
+              <label for="filter-type">Property Type</label
+              ><select id="filter-type" name="type">
+                <option value="">Any type</option>
+                <option value="Residential Land">Residential Land</option>
+                <option value="Commercial Land">Commercial Land</option>
+                <option value="Industrial Land">Industrial Land</option>
+                <option value="Solar Land">Solar Land</option>
+                <option value="Farm Land">Farm Land</option>
+                <option value="Other Land">Other Land (type not specified)</option>
+              </select>
+            </div>
+            <fieldset class="filter-fieldset">
+              <legend>Price Range ($)</legend>
+              <div class="field-range">
+                <div class="field">
+                  <label class="sr-only" for="filter-price-min"
+                    >Minimum price</label
+                  ><input
+                    id="filter-price-min"
+                    name="priceMin"
+                    type="number"
+                    min="0"
+                    step="any"
+                    placeholder="e.g. 50000"
+                  />
+                </div>
+                <span aria-hidden="true">–</span>
+                <div class="field">
+                  <label class="sr-only" for="filter-price-max"
+                    >Maximum price</label
+                  ><input
+                    id="filter-price-max"
+                    name="priceMax"
+                    type="number"
+                    min="0"
+                    step="any"
+                    placeholder="e.g. 100000"
+                  />
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="filter-fieldset">
+              <legend>Acres Range</legend>
+              <div class="field-range">
+                <div class="field">
+                  <label class="sr-only" for="filter-acres-min"
+                    >Minimum acres</label
+                  ><input
+                    id="filter-acres-min"
+                    name="acresMin"
+                    type="number"
+                    min="0"
+                    step="any"
+                    placeholder="e.g. 1"
+                  />
+                </div>
+                <span aria-hidden="true">–</span>
+                <div class="field">
+                  <label class="sr-only" for="filter-acres-max"
+                    >Maximum acres</label
+                  ><input
+                    id="filter-acres-max"
+                    name="acresMax"
+                    type="number"
+                    min="0"
+                    step="any"
+                    placeholder="e.g. 10"
+                  />
+                </div>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="filter-feature">Unique Features</label
+              ><select id="filter-feature" name="feature">
+                <option value="">Any feature</option>
+                <option value="mountain-views">Mountain views</option>
+                <option value="surrounded-by-homes">Surrounded by homes</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="filter-state">State</label
+              ><select id="filter-state" name="state">
+                <option value="">Any state</option>
+                <option value="Arizona" selected>Arizona</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="filter-city">City</label
+              ><select id="filter-city" name="city">
+                <option value="">Any city</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="filter-zip">ZIP Code</label
+              ><input
+                id="filter-zip"
+                name="zip"
+                type="text"
+                inputmode="numeric"
+                pattern="[0-9]{5}"
+                maxlength="5"
+                placeholder="5-digit ZIP"
+              />
+            </div>
+            <button class="button button--primary button--full" type="submit">
+              Search Properties <span aria-hidden="true">→</span>
+            </button>
+            <button
+              id="clear-property-filters"
+              class="button button--outline button--full"
+              type="button"
+            >
+              Clear All
+            </button>
+          </form>
+        </aside>
+        <div class="listing-results">
+          <div class="results-heading">
+            <div>
+              <p class="eyebrow">Available listing data</p>
+              <h2 id="results-heading">Explore Arizona Land</h2>
+              <p id="results-count" class="muted" aria-live="polite">
+                1 property found
+              </p>
+              <div
+                id="active-filter-tags"
+                class="active-filter-tags"
+                aria-label="Active search filters"
+                hidden
+              ></div>
+            </div>
+            <div class="sort-field">
+              <label for="sort-properties">Sort by</label
+              ><select id="sort-properties">
+                <option value="price-high">Highest Price</option>
+                <option value="price-low">Lowest Price</option>
+              </select>
+            </div>
+          </div>
+
+          <p
+            id="property-results-status"
+            class="sr-only"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <div
+            id="property-results"
+            class="property-grid property-grid--listing"
+          ></div>
+          <div id="property-empty-state" class="empty-state" hidden>
+            <span class="empty-state__icon" aria-hidden="true">⌕</span>
+            <h3>No properties match those filters.</h3>
+            <p id="empty-state-details">
+              Try widening your price, acreage, or location criteria.
+            </p>
+            <button
+              id="clear-empty-filters"
+              class="button button--outline"
+              type="button"
+            >
+              Clear All Filters
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html"
+            ><img
+              src="assets/logo/arizona-prime-land-source-logo.png"
+              alt=""
+              class="brand__logo"
+            /><span class="brand__wordmark"
+              ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+              ><b>.COM</b></span
+            ></a
+          >
+          <p>
+            Arizona land listings and seller inquiries, presented with clear
+            property information.
+          </p>
+        </div>
+        <div>
+          <h2 class="footer-heading">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sell-your-land.html">Sell Your Land</a></li>
+            <li><a href="prime-properties.html">Prime Properties</a></li>
+            <li><a href="login-register.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Property Types</h2>
+          <ul class="footer-links">
+            <li>
+              <a href="prime-properties.html?type=Residential%20Land"
+                >Residential Land</a
+              >
+            </li>
+            <li>
+              <a href="prime-properties.html?type=Commercial%20Land"
+                >Commercial Land</a
+              >
+            </li>
+            <li><a href="prime-properties.html?type=Industrial%20Land">Industrial Land</a></li>
+            <li><a href="prime-properties.html?type=Farm%20Land">Farm Land</a></li>
+            <li><a href="prime-properties.html?type=Solar%20Land">Solar Land</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Contact Us</h2>
+          <a
+            data-company-gmail
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=joe%40arizonaprimeland.com"
+            >joe@arizonaprimeland.com</a
+          ><a
+            class="footer-fallback"
+            data-company-mailto
+            href="mailto:joe@arizonaprimeland.com"
+            >Open with an email app</a
+          >
+          <p class="footer-legal">
+            Terms and Privacy details should be added after owner approval.
+          </p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span
+          >© <span data-current-year></span> ArizonaPrimeLand.com. All rights
+          reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>

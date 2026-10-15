@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Details for 409th Ave And Montebello - Lot E, Tonopah, Arizona 85354."
+    />
+    <title>Property Details | ArizonaPrimeLand.com</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/site.js" defer></script>
+    <script src="js/data.js" defer></script>
+    <script src="js/property-detail.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Arizona Prime Land home"
+          ><img
+            src="assets/logo/arizona-prime-land-source-logo.png"
+            alt=""
+            class="brand__logo"
+          /><span class="brand__wordmark"
+            ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+            ><b>.COM</b></span
+          ></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          data-menu-toggle
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="menu-toggle__bars" aria-hidden="true"></span
+          ><span class="sr-only">Toggle navigation</span>
+        </button>
+        <nav
+          id="primary-navigation"
+          class="primary-navigation"
+          aria-label="Primary navigation"
+        >
+          <a data-nav-link href="index.html">Home</a
+          ><a data-nav-link href="sell-your-land.html">Sell Your Land</a
+          ><a data-nav-link href="prime-properties.html">Prime Properties</a
+          ><a data-login-link data-nav-link href="login-register.html"
+            >Login / Register</a
+          ><a data-account-link data-nav-link href="login-register.html" hidden
+            >My Account</a
+          ><button class="nav-logout" data-logout-button type="button" hidden>
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content" class="detail-main">
+      <div id="property-not-found" class="container not-found" hidden>
+        <p class="eyebrow">Property unavailable</p>
+        <h2>We couldn't find that property.</h2>
+        <p>
+          The requested listing ID does not match an approved property record.
+        </p>
+        <a class="button button--primary" href="prime-properties.html"
+          >Back to Prime Properties</a
+        >
+      </div>
+      <div id="property-detail" class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span aria-hidden="true">/</span
+          ><a href="prime-properties.html">Prime Properties</a
+          ><span aria-hidden="true">/</span
+          ><span id="detail-breadcrumb-title" aria-current="page"
+            >Property Detail</span
+          >
+        </nav>
+        <section class="detail-top-grid">
+          <div class="gallery-card">
+            <div class="gallery-main">
+              <img
+                id="detail-main-image"
+                src="assets/images/lot-e-parcel-reference-placeholder.jpg"
+                alt="Property reference image"
+                fetchpriority="high"
+              /><span id="detail-image-count" class="gallery-count">1 / 6</span
+              ><button
+                id="gallery-previous"
+                class="gallery-arrow gallery-arrow--prev"
+                type="button"
+                aria-label="Previous image"
+              >
+                ‹</button
+              ><button
+                id="gallery-next"
+                class="gallery-arrow gallery-arrow--next"
+                type="button"
+                aria-label="Next image"
+              >
+                ›</button
+              ><button
+                id="gallery-enlarge"
+                class="gallery-enlarge"
+                type="button"
+              >
+                Enlarge image
+              </button>
+            </div>
+            <div
+              id="detail-gallery-thumbnails"
+              class="gallery-thumbnails"
+              aria-label="Property reference image thumbnails"
+            ></div>
+            <p id="detail-source-note" class="image-source-note"></p>
+          </div>
+          <aside class="detail-summary-card" aria-labelledby="detail-title">
+            <div class="detail-summary-card__top">
+              <span class="status-badge status-badge--green" id="detail-status"
+                >Active</span
+              ><button
+                id="save-property-button"
+                class="save-property-button"
+                type="button"
+                aria-pressed="false"
+              >
+                ♡ Save Property
+              </button>
+            </div>
+            <h1 id="detail-title">
+              409th Ave And Montebello - Lot E, Tonopah, AZ 85354
+            </h1>
+            <p class="detail-location">
+              ⌖ <span id="detail-location">Tonopah, AZ 85354</span>
+            </p>
+            <p class="detail-summary-price" id="detail-price">$34,900.00</p>
+            <p class="detail-price-per-acre" id="detail-price-acre">
+              $34,900.00 per acre
+            </p>
+            <p id="detail-price-acre-note" class="detail-data-note" hidden></p>
+            <div class="detail-stat-grid">
+              <div>
+                <span class="stat-icon" aria-hidden="true">▧</span
+                ><strong id="detail-acreage">1.00 Acres</strong
+                ><small>Lot Size</small>
+              </div>
+              <div>
+                <span class="stat-icon" aria-hidden="true">⌂</span
+                ><strong id="detail-type">Residential</strong
+                ><small>Property Type</small>
+              </div>
+              <div>
+                <span class="stat-icon" aria-hidden="true">$</span
+                ><strong id="detail-financing">Cash</strong
+                ><small>Financing</small>
+              </div>
+            </div>
+            <a
+              class="button button--primary button--full"
+              href="#property-inquiry"
+              ><span aria-hidden="true">✉</span> Contact About This Property</a
+            >
+            <p
+              id="save-property-status"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+            <div class="detail-contact-shortcuts">
+              <a class="button button--outline" href="#property-location"
+                >View Location</a
+              ><a class="button button--outline" href="#agent-contact"
+                >Contact Agent</a
+              >
+            </div>
+          </aside>
+        </section>
+
+        <br>
+
+        <section class="detail-content-grid">
+          <div class="detail-content-column">
+            <article class="content-panel">
+              <p class="eyebrow">Listing information</p>
+              <h2>Property Details</h2>
+              <dl class="detail-table">
+                <div>
+                  <dt>Price</dt>
+                  <dd id="detail-table-price">$34,900.00</dd>
+                </div>
+                <div>
+                  <dt>Price per acre</dt>
+                  <dd id="detail-table-price-acre">$34,900.00</dd>
+                </div>
+                <div>
+                  <dt>Property Type</dt>
+                  <dd id="detail-table-type">Residential</dd>
+                </div>
+                <div>
+                  <dt>Acreage</dt>
+                  <dd id="detail-table-acreage">1.00 Acres</dd>
+                </div>
+                <div>
+                  <dt>APN / Parcel Number</dt>
+                  <dd id="detail-apn">506-35-658-F</dd>
+                </div>
+                <div>
+                  <dt>MLS Number</dt>
+                  <dd id="detail-mls">6613505</dd>
+                </div>
+                <div>
+                  <dt>Current Zoning</dt>
+                  <dd id="detail-zoning">R-43</dd>
+                </div>
+                <div>
+                  <dt>Financing</dt>
+                  <dd id="detail-table-financing">Cash</dd>
+                </div>
+              </dl>
+
+            </article>
+            <article class="content-panel">
+              <p class="eyebrow">Location details</p>
+              <h2>Property Location</h2>
+              <dl class="location-list">
+                <div>
+                  <dt>City</dt>
+                  <dd id="detail-city">Tonopah</dd>
+                </div>
+                <div>
+                  <dt>State</dt>
+                  <dd id="detail-state">Arizona</dd>
+                </div>
+                <div>
+                  <dt>Country</dt>
+                  <dd id="detail-country">United States</dd>
+                </div>
+                <div>
+                  <dt>ZIP Code</dt>
+                  <dd id="detail-zip">85354</dd>
+                </div>
+                <div>
+                  <dt>Cross Street</dt>
+                  <dd id="detail-cross-street">409th Ave and Montebello</dd>
+                </div>
+              </dl>
+              <div id="property-location" class="location-preview">
+                <img
+                  id="detail-area-preview-image"
+                  src="assets/images/lot-e-gallery-placeholder-2.jpg"
+                  alt="Property listing photo; not a verified boundary map"
+                  loading="lazy"
+                />
+                <div>
+                  <strong>Approximate area only</strong>
+                    <p id="detail-location-note">
+                    Map location is approximate and does not show verified parcel boundaries.
+                  </p>
+                  <a
+                    id="detail-area-map-link"
+                    class="text-link"
+                    href="https://www.google.com/maps/search/?api=1&query=Tonopah%2C%20Arizona%2085354"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open source-area map ↗</a
+                  >
+                </div>
+              </div>
+            </article>
+            <article id="detail-features-panel" class="content-panel" hidden>
+              <p class="eyebrow">Property highlights</p>
+              <h2>Key Features</h2>
+              <ul id="detail-property-features" class="property-feature-list"></ul>
+            </article>
+            <article id="detail-directions-panel" class="content-panel" hidden>
+              <p class="eyebrow">Getting there</p>
+              <h2>Directions</h2>
+              <p id="detail-directions" class="remarks-copy"></p>
+            </article>
+            <article class="content-panel" id="detail-remarks-panel">
+              <p class="eyebrow">From the source listing</p>
+              <h2>Remarks</h2>
+              <p id="detail-remarks" class="remarks-copy">
+                Source listing remarks.
+              </p>
+
+            </article>
+          </div>
+          <div class="detail-content-column detail-sidebar-column">
+            <aside id="agent-contact" class="agent-card">
+              <p class="eyebrow">Listing contact</p>
+              <img
+                class="agent-avatar"
+                src="assets/images/justland-agent-jawahar.jpeg"
+                alt="Jawahar Dodani, listing agent"
+              />
+              <h2 id="detail-agent-name">Jawahar Dodani</h2>
+              <p id="detail-agent-role" class="agent-role">
+                Real Estate Agent (Founder) / eXp Realty
+              </p>
+              <div class="agent-contact-lines">
+                <a
+                  id="detail-agent-email-link"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=joe%40dodaniproperties.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span aria-hidden="true">✉</span
+                  ><span id="detail-agent-email"
+                    >joe@dodaniproperties.com</span
+                  ></a
+                ><a
+                  id="detail-agent-mailto"
+                  href="mailto:joe@dodaniproperties.com"
+                  >Open with an email app</a
+                ><a id="detail-agent-phone-link" href="tel:+14802007127"
+                  ><span aria-hidden="true">☎</span
+                  ><span id="detail-agent-phone">4802007127</span></a
+                >
+              </div>
+              <a
+                class="button button--primary button--full"
+                href="#property-inquiry"
+                >Contact Agent</a
+              >
+            </aside>
+            <section id="property-inquiry" class="content-panel inquiry-panel">
+              <p class="eyebrow">Ask a question</p>
+              <h2>Interested in This Property?</h2>
+              <p class="muted">
+                Submit to open a draft addressed to the listed agent. Your
+                message is not sent automatically.
+              </p>
+              <form id="property-inquiry-form">
+                <div class="field">
+                  <label for="inquiry-name">Full Name *</label
+                  ><input
+                    id="inquiry-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    minlength="2"
+                  />
+                </div>
+                <div class="field">
+                  <label for="inquiry-phone">Phone Number *</label
+                  ><input
+                    id="inquiry-phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="inquiry-email">Email Address *</label
+                  ><input
+                    id="inquiry-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="inquiry-message">Message (Optional)</label
+                  ><textarea
+                    id="inquiry-message"
+                    name="message"
+                    rows="3"
+                    maxlength="1000"
+                    placeholder="I'm interested in this property..."
+                  ></textarea>
+                </div>
+                <button
+                  class="button button--primary button--full"
+                  type="submit"
+                >
+                  Prepare Inquiry Email <span aria-hidden="true">→</span>
+                </button>
+                <p
+                  id="property-inquiry-status"
+                  class="form-status"
+                  role="status"
+                  aria-live="polite"
+                  hidden
+                ></p>
+              </form>
+            </section>
+          </div>
+        </section>
+        <section class="section similar-properties">
+          <div class="section-heading">
+            <p class="eyebrow">Keep exploring</p>
+            <h2>Similar Properties</h2>
+            <p class="muted">
+              Browse more Arizona land listings and compare location, acreage,
+              and asking price.
+            </p>
+          </div>
+          <div id="similar-property-results" class="property-grid similar-property-grid" aria-live="polite"></div>
+<br>
+            <a class="button button--outline" href="prime-properties.html"
+              >Browse All Properties <span aria-hidden="true">→</span></a
+            >
+          </div>
+        </section>
+      </div>
+      <div
+        id="gallery-lightbox"
+        class="lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Enlarged property reference image"
+        hidden
+      >
+        <button
+          id="gallery-close"
+          class="lightbox__close"
+          type="button"
+          aria-label="Close enlarged image"
+        >
+          ×</button
+        ><img
+          id="lightbox-image"
+          src="assets/images/lot-e-parcel-reference-placeholder.jpg"
+          alt="Enlarged property reference"
+        />
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html"
+            ><img
+              src="assets/logo/arizona-prime-land-source-logo.png"
+              alt=""
+              class="brand__logo"
+            /><span class="brand__wordmark"
+              ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+              ><b>.COM</b></span
+            ></a
+          >
+          <p>
+            Arizona land listings and seller inquiries, presented with clear
+            property information.
+          </p>
+        </div>
+        <div>
+          <h2 class="footer-heading">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sell-your-land.html">Sell Your Land</a></li>
+            <li><a href="prime-properties.html">Prime Properties</a></li>
+            <li><a href="login-register.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Property Types</h2>
+          <ul class="footer-links">
+            <li>
+              <a href="prime-properties.html?type=Residential%20Land"
+                >Residential Land</a
+              >
+            </li>
+            <li>
+              <a href="prime-properties.html?type=Commercial%20Land"
+                >Commercial / Industrial</a
+              >
+            </li>
+            <li><a href="prime-properties.html?type=Farm%20Land">Farm Land</a></li>
+            <li><a href="prime-properties.html?type=Solar%20Land">Solar Land</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Contact Us</h2>
+          <a
+            data-company-gmail
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=joe%40arizonaprimeland.com"
+            >joe@arizonaprimeland.com</a
+          ><a
+            class="footer-fallback"
+            data-company-mailto
+            href="mailto:joe@arizonaprimeland.com"
+            >Open with an email app</a
+          >
+          <p class="footer-legal">
+            Terms and Privacy details should be added after owner approval.
+          </p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span
+          >© <span data-current-year></span> ArizonaPrimeLand.com. All rights
+          reserved.</span>
+      </div>
+    </footer>
+  </body>
+</html>

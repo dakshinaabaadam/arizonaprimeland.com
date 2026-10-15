@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Share basic information about land you would like to sell in Arizona."
+    />
+    <title>Sell Your Land | ArizonaPrimeLand.com</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/site.js" defer></script>
+    <script src="js/sell-your-land.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Arizona Prime Land home"
+          ><img
+            src="assets/logo/arizona-prime-land-source-logo.png"
+            alt=""
+            class="brand__logo"
+          /><span class="brand__wordmark"
+            ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+            ><b>.COM</b></span
+          ></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          data-menu-toggle
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="menu-toggle__bars" aria-hidden="true"></span
+          ><span class="sr-only">Toggle navigation</span>
+        </button>
+        <nav
+          id="primary-navigation"
+          class="primary-navigation"
+          aria-label="Primary navigation"
+        >
+          <a data-nav-link href="index.html">Home</a
+          ><a data-nav-link href="sell-your-land.html" aria-current="page"
+            >Sell Your Land</a
+          ><a data-nav-link href="prime-properties.html">Prime Properties</a
+          ><a data-login-link data-nav-link href="login-register.html"
+            >Login / Register</a
+          ><a data-account-link data-nav-link href="login-register.html" hidden
+            >My Account</a
+          ><button class="nav-logout" data-logout-button type="button" hidden>
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <section class="sell-hero">
+        <div class="sell-hero__image" aria-hidden="true"></div>
+        <div class="container sell-hero__inner">
+          <div class="sell-intro">
+            <p class="eyebrow eyebrow--light">Sell with clarity</p>
+            <h1>Sell Your Land <span>in Arizona</span></h1>
+            <p>
+              Tell us a little about your land and how we can reach you. The
+              form below is a local demo and does not transmit your information.
+            </p>
+            <div class="benefit-list">
+              <div class="benefit-item">
+                <span class="benefit-item__icon" aria-hidden="true">↗</span>
+                <div>
+                  <strong>A Clear First Step</strong>
+                  <p>Share the basics in one place.</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <span
+                  class="benefit-item__icon benefit-item__icon--blue"
+                  aria-hidden="true"
+                  >✓</span
+                >
+                <div>
+                  <strong>Transparent Information</strong>
+                  <p>Provide details that help start a conversation.</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <span
+                  class="benefit-item__icon benefit-item__icon--green"
+                  aria-hidden="true"
+                  >⌖</span
+                >
+                <div>
+                  <strong>Arizona-Focused</strong>
+                  <p>Include the property's location and size.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-card seller-form-card">
+            <p class="eyebrow">Get started</p>
+            <h2>Tell Us About Your Land</h2>
+            <p class="muted">
+              Complete the form and review your details before submitting.
+            </p>
+            <p
+              id="seller-error-summary"
+              class="form-error form-error--summary"
+              role="alert"
+              hidden
+            ></p>
+            <div
+              id="seller-success"
+              class="form-status form-status--success"
+              role="status"
+              aria-live="polite"
+              tabindex="-1"
+              hidden
+            ></div>
+            <form id="sell-land-form" novalidate>
+              <div class="form-grid form-grid--two">
+                <div class="field">
+                  <label for="seller-name"
+                    >Full Name <span class="required-mark">*</span></label
+                  ><input
+                    id="seller-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    minlength="2"
+                    required
+                  /><small
+                    class="field-error"
+                    data-error-for="seller-name"
+                  ></small>
+                </div>
+                <div class="field">
+                  <label for="seller-phone"
+                    >Phone Number <span class="required-mark">*</span></label
+                  ><input
+                    id="seller-phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="(555) 555-5555"
+                    required
+                    aria-describedby="seller-phone-help"
+                  /><small id="seller-phone-help" class="field-help"
+                    >US number: 10 digits including area code.</small
+                  ><small
+                    class="field-error"
+                    data-error-for="seller-phone"
+                  ></small>
+                </div>
+                <div class="field">
+                  <label for="seller-email"
+                    >Email Address <span class="required-mark">*</span></label
+                  ><input
+                    id="seller-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  /><small
+                    class="field-error"
+                    data-error-for="seller-email"
+                  ></small>
+                </div>
+                <div class="field">
+                  <label for="seller-location"
+                    >Property Location
+                    <span class="required-mark">*</span></label
+                  ><input
+                    id="seller-location"
+                    name="location"
+                    type="text"
+                    placeholder="City, county, state or ZIP"
+                    required
+                  /><small
+                    class="field-error"
+                    data-error-for="seller-location"
+                  ></small>
+                </div>
+                <div class="field">
+                  <label for="seller-acres"
+                    >Property Size (Acres)
+                    <span class="required-mark">*</span></label
+                  ><input
+                    id="seller-acres"
+                    name="acres"
+                    type="number"
+                    min="0.01"
+                    step="any"
+                    placeholder="e.g. 1.5"
+                    required
+                  /><small
+                    class="field-error"
+                    data-error-for="seller-acres"
+                  ></small>
+                </div>
+                <div class="field">
+                  <label for="seller-land-type"
+                    >Land Type <span class="required-mark">*</span></label
+                  ><select id="seller-land-type" name="landType" required>
+                    <option value="">Select land type</option>
+                    <option>Residential</option>
+                    <option>Commercial / Industrial</option>
+                    <option>Farm</option>
+                    <option>Solar</option>
+                    <option>Other</option></select
+                  ><small
+                    class="field-error"
+                    data-error-for="seller-land-type"
+                  ></small>
+                </div>
+                <div class="field field--full">
+                  <label for="seller-details"
+                    >Additional Details
+                    <span class="optional-mark">(Optional)</span></label
+                  ><textarea
+                    id="seller-details"
+                    name="details"
+                    rows="4"
+                    maxlength="1500"
+                    placeholder="Parcel number, access information, or anything else you would like to share."
+                  ></textarea
+                  ><small class="field-help">Maximum 1,500 characters.</small
+                  ><small
+                    class="field-error"
+                    data-error-for="seller-details"
+                  ></small>
+                </div>
+              </div>
+              <button class="button button--primary button--full" type="submit">
+                Submit Land Details <span aria-hidden="true">→</span>
+              </button>
+              <p class="form-privacy-note">
+                Please do not include sensitive personal or financial
+                information.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section seller-prep-section"
+        aria-labelledby="why-sell-heading"
+      >
+        <div class="container">
+          <div class="section-heading seller-prep-heading">
+            <p class="eyebrow">Why share your details?</p>
+            <h2 id="why-sell-heading">A Straightforward Starting Point</h2>
+            <p class="muted">
+              A few helpful details make it easier to understand your property
+              and organize a clear next conversation.
+            </p>
+          </div>
+          <div class="value-grid seller-prep-grid">
+            <article class="value-card seller-prep-card">
+              <div class="seller-prep-card__top">
+                <span class="seller-prep-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" fill="none"><path d="m6 15 11-6 14 5 11-6v25l-11 6-14-5-11 6V15Z"/><path d="m17 9v25m14-20v25"/><path d="M26 17a5 5 0 1 0-10 0c0 4 5 9 5 9s5-5 5-9Z"/><circle cx="21" cy="17" r="1.5"/></svg>
+                </span><span class="seller-prep-card__number">01</span>
+              </div>
+              <h3>Share the Key Facts</h3>
+              <p>
+                Tell us what you know about the property so its location and
+                potential are easy to understand.
+              </p>
+              <ul class="seller-prep-card__list">
+                <li>City, county, or nearest town</li>
+                <li>Approximate acreage or lot size</li>
+                <li>Land type and notable features</li>
+              </ul>
+              <div class="seller-prep-card__visual">
+                <img src="assets/images/city-tonopah-generated.png" alt="" loading="lazy" />
+                <span>Arizona land<br />Room to explore</span>
+              </div>
+            </article>
+            <article class="value-card seller-prep-card">
+              <div class="seller-prep-card__top">
+                <span class="seller-prep-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" fill="none"><path d="M13 8 8 11c-2 2 1 9 7 15s13 9 15 7l3-5-8-6-4 4c-3-1-6-4-7-7l4-4-5-7Z"/><path d="M27 10c5 1 9 5 10 10m-10-17c9 1 16 8 17 17"/></svg>
+                </span><span class="seller-prep-card__number">02</span>
+              </div>
+              <h3>Make Contact Simple</h3>
+              <p>
+                Include the best ways to reach you and any useful context for
+                your inquiry.
+              </p>
+              <ul class="seller-prep-card__list">
+                <li>A phone number you can access</li>
+                <li>An active email address</li>
+                <li>Preferred contact time or notes</li>
+              </ul>
+              <div class="seller-prep-card__visual">
+                <img src="assets/images/city-phoenix-generated.png" alt="" loading="lazy" />
+                <span>Direct communication<br />Your questions matter</span>
+              </div>
+            </article>
+            <article class="value-card seller-prep-card">
+              <div class="seller-prep-card__top">
+                <span class="seller-prep-card__icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" fill="none"><path d="M7 10h34v24H23l-10 8v-8H7V10Z"/><path d="M20 18a4 4 0 1 1 7 3c-2 2-3 2-3 5m0 4h.01"/></svg>
+                </span><span class="seller-prep-card__number">03</span>
+              </div>
+              <h3>Get Clear Next Steps</h3>
+              <p>
+                Use the conversation to clarify the information that matters
+                before making a decision.
+              </p>
+              <ul class="seller-prep-card__list">
+                <li>Discuss access, utilities, and zoning</li>
+                <li>Ask about documents and process</li>
+                <li>Confirm expectations and terms</li>
+              </ul>
+              <div class="seller-prep-card__visual">
+                <img src="assets/images/city-prescott-generated.png" alt="" loading="lazy" />
+                <span>Move forward<br />with clarity</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section seller-process-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow eyebrow--blue">How it works</p>
+            <h2>A Simple 3-Step Process</h2>
+              <p class="muted">
+                From sharing the basics to confirming property facts, take a
+                clear and careful approach at every step.
+              </p>
+          </div>
+          <div class="steps-grid steps-grid--three seller-process-grid">
+            <article class="step-card">
+              <span class="step-card__number">01</span
+              ><span class="step-card__icon" aria-hidden="true">▤</span>
+              <h3>Share Your Land Details</h3>
+              <p>
+                Start with the information you have to describe the property
+                and your inquiry.
+              </p>
+              <ul class="seller-process-list">
+                <li>Location and parcel details</li>
+                <li>Approximate lot size and land type</li>
+                <li>Your preferred contact method</li>
+              </ul>
+            </article>
+            <article class="step-card">
+              <span class="step-card__number">02</span
+              ><span
+                class="step-card__icon step-card__icon--blue"
+                aria-hidden="true"
+                >☎</span
+              >
+              <h3>Review the Information</h3>
+              <p>
+                Review listing details and note anything you would like to
+                verify or ask about.
+              </p>
+              <ul class="seller-process-list">
+                <li>Check the property description</li>
+                <li>Gather your questions and documents</li>
+                <li>Use the listed contact information</li>
+              </ul>
+            </article>
+            <article class="step-card">
+              <span class="step-card__number">03</span
+              ><span
+                class="step-card__icon step-card__icon--green"
+                aria-hidden="true"
+                >✓</span
+              >
+              <h3>Explore Your Options</h3>
+              <p>
+                Speak with the listing representative and independently
+                confirm details before deciding how to proceed.
+              </p>
+              <ul class="seller-process-list">
+                <li>Ask about access, utilities, and zoning</li>
+                <li>Review process, terms, and costs</li>
+                <li>Decide what works for you</li>
+              </ul>
+            </article>
+          </div>
+
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html"
+            ><img
+              src="assets/logo/arizona-prime-land-source-logo.png"
+              alt=""
+              class="brand__logo"
+            /><span class="brand__wordmark"
+              ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+              ><b>.COM</b></span
+            ></a
+          >
+          <p>
+            Arizona land listings and seller inquiries, presented with clear
+            property information.
+          </p>
+        </div>
+        <div>
+          <h2 class="footer-heading">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sell-your-land.html">Sell Your Land</a></li>
+            <li><a href="prime-properties.html">Prime Properties</a></li>
+            <li><a href="login-register.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Property Types</h2>
+          <ul class="footer-links">
+            <li>
+              <a href="prime-properties.html?type=Residential%20Land"
+                >Residential Land</a
+              >
+            </li>
+            <li>
+              <a href="prime-properties.html?type=Commercial%20Land"
+                >Commercial / Industrial</a
+              >
+            </li>
+            <li><a href="prime-properties.html?type=Farm%20Land">Farm Land</a></li>
+            <li><a href="prime-properties.html?type=Solar%20Land">Solar Land</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Contact Us</h2>
+          <a
+            data-company-gmail
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=joe%40arizonaprimeland.com"
+            >joe@arizonaprimeland.com</a
+          ><a
+            class="footer-fallback"
+            data-company-mailto
+            href="mailto:joe@arizonaprimeland.com"
+            >Open with an email app</a
+          >
+          <p class="footer-legal">
+            Terms and Privacy details should be added after owner approval.
+          </p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span
+          >© <span data-current-year></span> ArizonaPrimeLand.com. All rights
+          reserved.</span
+        >
+      </div>
+    </footer>
+  </body>
+</html>

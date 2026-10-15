@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Login or register for an ArizonaPrimeLand.com account demo."
+    />
+    <title>Login / Register | ArizonaPrimeLand.com</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/site.js" defer></script>
+    <script src="js/auth.js" defer></script>
+  </head>
+  <body class="auth-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Arizona Prime Land home"
+          ><img
+            src="assets/logo/arizona-prime-land-source-logo.png"
+            alt=""
+            class="brand__logo"
+          /><span class="brand__wordmark"
+            ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+            ><b>.COM</b></span
+          ></a
+        >
+        <button
+          class="menu-toggle"
+          type="button"
+          data-menu-toggle
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+        >
+          <span class="menu-toggle__bars" aria-hidden="true"></span
+          ><span class="sr-only">Toggle navigation</span>
+        </button>
+        <nav
+          id="primary-navigation"
+          class="primary-navigation"
+          aria-label="Primary navigation"
+        >
+          <a data-nav-link href="index.html">Home</a
+          ><a data-nav-link href="sell-your-land.html">Sell Your Land</a
+          ><a data-nav-link href="prime-properties.html">Prime Properties</a
+          ><a
+            data-login-link
+            data-nav-link
+            href="login-register.html"
+            aria-current="page"
+            >Login / Register</a
+          ><a data-account-link data-nav-link href="login-register.html" hidden
+            >My Account</a
+          ><button class="nav-logout" data-logout-button type="button" hidden>
+            Logout
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main id="main-content">
+      <section class="auth-hero">
+        <div class="auth-hero__image" aria-hidden="true"></div>
+        <div class="container auth-hero__content">
+          <p class="eyebrow eyebrow--light">Your Arizona land account</p>
+          <h1>Welcome Back!</h1>
+          <p>
+            Log in or create an account to explore and manage your land
+            opportunities.
+          </p>
+        </div>
+      </section>
+      <section
+        class="container auth-card-wrap"
+        aria-label="Account login and registration"
+      >
+        <div class="auth-card">
+          <aside class="auth-promo">
+            <p class="eyebrow">ArizonaPrimeLand</p>
+            <h2>Your Land Opportunities Start Here</h2>
+            <p>
+              Create a demo account to preview how saved properties and listing
+              updates can fit into your experience.
+            </p>
+            <div class="benefit-list benefit-list--dark">
+              <div class="benefit-item">
+                <span class="benefit-item__icon" aria-hidden="true">♡</span>
+                <div>
+                  <strong>Save Favorite Properties</strong>
+                  <p>Keep track of land you like.</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <span
+                  class="benefit-item__icon benefit-item__icon--blue"
+                  aria-hidden="true"
+                  >⌁</span
+                >
+                <div>
+                  <strong>Get Property Updates</strong>
+                  <p>See the latest approved listing data.</p>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <span
+                  class="benefit-item__icon benefit-item__icon--green"
+                  aria-hidden="true"
+                  >✉</span
+                >
+                <div>
+                  <strong>Manage Your Inquiries</strong>
+                  <p>Keep your property questions organized.</p>
+                </div>
+              </div>
+            </div>
+
+          </aside>
+          <div class="auth-form-side">
+            <div
+              id="auth-tablist"
+              class="auth-tabs"
+              role="tablist"
+              aria-label="Login or register"
+            >
+              <button
+                id="auth-tab-login"
+                class="auth-tab is-active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="login-panel"
+              >
+                Login</button
+              ><button
+                id="auth-tab-register"
+                class="auth-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="register-panel"
+              >
+                Register
+              </button>
+            </div>
+            <p
+              id="auth-status"
+              class="form-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
+            <section
+              id="login-panel"
+              class="auth-panel"
+              role="tabpanel"
+              aria-labelledby="auth-tab-login"
+            >
+              <form id="login-form">
+                <div class="field">
+                  <label for="login-email"
+                    >Email Address <span class="required-mark">*</span></label
+                  ><input
+                    id="login-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="login-password"
+                    >Password <span class="required-mark">*</span></label
+                  >
+                  <div class="password-wrap">
+                    <input
+                      id="login-password"
+                      name="password"
+                      type="password"
+                      autocomplete="current-password"
+                      required
+                    /><button
+                      id="toggle-login-password"
+                      class="password-toggle"
+                      type="button"
+                      aria-pressed="false"
+                    >
+                      Show
+                    </button>
+                  </div>
+                </div>
+                <div class="auth-options">
+                  <label class="checkbox-label" for="remember-me"
+                    ><input
+                      id="remember-me"
+                      name="rememberMe"
+                      type="checkbox"
+                    /><span>Remember me</span></label
+                  ><a
+                    id="forgot-password-link"
+                    class="text-link"
+                    href="#forgot-panel"
+                    >Forgot Password?</a
+                  >
+                </div>
+                <button
+                  class="button button--primary button--full"
+                  type="submit"
+                >
+                  Login <span aria-hidden="true">→</span>
+                </button>
+              </form>
+              <div class="auth-divider">
+                <span>New to ArizonaPrimeLand?</span>
+              </div>
+              <p class="auth-switch-copy">
+                Don't have an account?
+                <a href="#auth-tab-register" data-open-register>Register Now</a>
+              </p>
+            </section>
+            <section
+              id="register-panel"
+              class="auth-panel"
+              role="tabpanel"
+              aria-labelledby="auth-tab-register"
+              hidden
+            >
+              <form id="register-form">
+                <div class="field">
+                  <label for="register-name"
+                    >Full Name <span class="required-mark">*</span></label
+                  ><input
+                    id="register-name"
+                    name="name"
+                    autocomplete="name"
+                    minlength="2"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="register-email"
+                    >Email Address <span class="required-mark">*</span></label
+                  ><input
+                    id="register-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="register-password"
+                    >Password <span class="required-mark">*</span></label
+                  >
+                  <div class="password-wrap">
+                    <input
+                      id="register-password"
+                      name="password"
+                      type="password"
+                      autocomplete="new-password"
+                      minlength="8"
+                      required
+                    /><button
+                      id="toggle-register-password"
+                      class="password-toggle"
+                      type="button"
+                      aria-pressed="false"
+                    >
+                      Show
+                    </button>
+                  </div>
+                  <small class="field-help"
+                    >Use at least 8 characters for this demo.</small
+                  >
+                </div>
+                <div class="field">
+                  <label for="register-confirm-password"
+                    >Confirm Password
+                    <span class="required-mark">*</span></label
+                  >
+                  <div class="password-wrap">
+                    <input
+                      id="register-confirm-password"
+                      name="confirmPassword"
+                      type="password"
+                      autocomplete="new-password"
+                      required
+                    /><button
+                      id="toggle-confirm-password"
+                      class="password-toggle"
+                      type="button"
+                      aria-pressed="false"
+                    >
+                      Show
+                    </button>
+                  </div>
+                </div>
+                <label
+                  class="checkbox-label checkbox-label--terms"
+                  for="register-terms"
+                  ><input
+                    id="register-terms"
+                    name="terms"
+                    type="checkbox"
+                    required
+                  /><span
+                    >I understand that Terms and Privacy copy is pending owner
+                    approval.
+                    <small
+                      >This checkbox is for the demo only; approved legal
+                      documents must be linked before production.</small
+                    ></span
+                  ></label
+                >
+                <button
+                  class="button button--primary button--full"
+                  type="submit"
+                >
+                  Create Demo Account <span aria-hidden="true">→</span>
+                </button>
+              </form>
+              <p class="auth-switch-copy">
+                Already have an account?
+                <a href="#auth-tab-login" data-open-login>Log in</a>
+              </p>
+            </section>
+            <section
+              id="forgot-panel"
+              class="auth-panel"
+              hidden
+              aria-labelledby="forgot-heading"
+            >
+              <h3 id="forgot-heading">Reset Your Password</h3>
+              <p class="muted">
+                Enter your email to see the password-reset confirmation state.
+              </p>
+              <form id="forgot-form">
+                <div class="field">
+                  <label for="forgot-email">Email Address</label
+                  ><input
+                    id="forgot-email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <button
+                  class="button button--primary button--full"
+                  type="submit"
+                >
+                  Request Reset Instructions
+                </button>
+              </form>
+              <p class="auth-switch-copy">
+                <a id="return-to-login" href="#auth-tab-login"
+                  >← Return to Login</a
+                >
+              </p>
+            </section>
+            <section
+              id="auth-logged-in-panel"
+              class="auth-panel signed-in-panel"
+              hidden
+            >
+              <span class="signed-in-icon" aria-hidden="true">✓</span>
+              <h3>You're signed in to the demo</h3>
+              <p class="muted">Demo account</p>
+              <strong id="signed-in-email"></strong>
+              <p>
+                Your session is temporary and stored only for this browser tab.
+                It is not a secure account session.
+              </p>
+              <button
+                id="auth-page-logout"
+                class="button button--outline button--full"
+                type="button"
+              >
+                Logout
+              </button>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="brand brand--footer" href="index.html"
+            ><img
+              src="assets/logo/arizona-prime-land-source-logo.png"
+              alt=""
+              class="brand__logo"
+            /><span class="brand__wordmark"
+              ><span>ARIZONA</span><span>PRIME</span><span>LAND</span
+              ><b>.COM</b></span
+            ></a
+          >
+          <p>
+            Arizona land listings and seller inquiries, presented with clear
+            property information.
+          </p>
+        </div>
+        <div>
+          <h2 class="footer-heading">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sell-your-land.html">Sell Your Land</a></li>
+            <li><a href="prime-properties.html">Prime Properties</a></li>
+            <li><a href="login-register.html">Login / Register</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Property Types</h2>
+          <ul class="footer-links">
+            <li>
+              <a href="prime-properties.html?type=Residential%20Land"
+                >Residential Land</a
+              >
+            </li>
+            <li>
+              <a href="prime-properties.html?type=Commercial%20Land"
+                >Commercial / Industrial</a
+              >
+            </li>
+            <li><a href="prime-properties.html?type=Farm%20Land">Farm Land</a></li>
+            <li><a href="prime-properties.html?type=Solar%20Land">Solar Land</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Contact Us</h2>
+          <a
+            data-company-gmail
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=joe%40arizonaprimeland.com"
+            >joe@arizonaprimeland.com</a
+          ><a
+            class="footer-fallback"
+            data-company-mailto
+            href="mailto:joe@arizonaprimeland.com"
+            >Open with an email app</a
+          >
+          <p class="footer-legal">
+            Terms and Privacy details should be added after owner approval.
+          </p>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span
+          >© <span data-current-year></span> ArizonaPrimeLand.com. All rights
+          reserved.</span
+        ><span>Demo authentication · not for production account security.</span>
+      </div>
+    </footer>
+  </body>
+</html>

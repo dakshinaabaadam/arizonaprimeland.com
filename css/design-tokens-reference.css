@@ -1,0 +1,23 @@
+/* ArizonaPrimeLand design tokens — starter values; tune to the approved logo */
+:root {
+  --apl-orange: #F65A00;
+  --apl-orange-dark: #D94C00;
+  --apl-blue: #168BE3;
+  --apl-navy: #102A43;
+  --apl-ink: #15212D;
+  --apl-text: #425466;
+  --apl-muted: #718096;
+  --apl-border: #D9E2EC;
+  --apl-surface: #FFFFFF;
+  --apl-surface-soft: #F8F6F2;
+  --apl-blue-soft: #EAF5FF;
+  --apl-orange-soft: #FFF0E6;
+  --apl-footer: #0B1B23;
+  --apl-success: #2E7D32;
+  --apl-danger: #C62828;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-card: 0 8px 24px rgba(16, 42, 67, 0.08);
+  --content-max: 1200px;
+}

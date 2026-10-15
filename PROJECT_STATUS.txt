@@ -1,0 +1,14 @@
+ARIZONAPRIMELAND.COM — FRONTEND BUILD
+
+Stack: HTML5, CSS3, vanilla JavaScript ES6+ only.
+Status: Frontend demo assembled. Main pages and interactions are wired.
+
+Important limitations:
+- Lead forms do not submit data to a server.
+- Login/register is simulated browser-tab state, not real authentication.
+- Email buttons open message drafts; they do not send emails automatically.
+- Only one listing record is included because only one property is documented.
+- Several photos are explicitly labeled placeholders from generated design mockups or screenshots.
+- Verify the lot acreage/remarks discrepancy, exact parcel address, official survey, price/status, agent details, and licensed photography before production.
+
+Read README.md first.
